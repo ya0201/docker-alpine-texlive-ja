@@ -9,7 +9,6 @@ FROM frolvlad/alpine-glibc
 MAINTAINER ya0201
 
 ENV PATH /usr/local/texlive/2018/bin/x86_64-linuxmusl:$PATH
-ENV BSTINPUTS $BSTINPUTS:/usr/local/texlive/2018/texmf-dist/pbibtex/bst
 
 RUN apk --no-cache add perl wget xz tar fontconfig-dev freetype-dev && \
     mkdir /tmp/install-tl-unx && \
@@ -26,7 +25,7 @@ RUN apk --no-cache add perl wget xz tar fontconfig-dev freetype-dev && \
       collection-basic collection-latex \
       collection-latexrecommended collection-latexextra \
       collection-fontsrecommended collection-langjapanese \
-      latexmk xetex && \
+      latexmk xetex ieeepes && \
     rm -fr /tmp/install-tl-unx && \
     apk --no-cache del xz tar
 
