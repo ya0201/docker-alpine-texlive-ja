@@ -1,13 +1,15 @@
 # Copyright (c) 2016 Kaito Udagawa
 # Copyright (c) 2016-2018 3846masa
+# Copyright (c) 2018 ya0201
 # Released under the MIT license
 # https://opensource.org/licenses/MIT
 
 FROM frolvlad/alpine-glibc
 
-MAINTAINER 3846masa
+MAINTAINER ya0201
 
 ENV PATH /usr/local/texlive/2018/bin/x86_64-linuxmusl:$PATH
+ENV BSTINPUTS $BSTINPUTS:/usr/local/texlive/2018/texmf-dist/pbibtex/bst
 
 RUN apk --no-cache add perl wget xz tar fontconfig-dev freetype-dev && \
     mkdir /tmp/install-tl-unx && \
